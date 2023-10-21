@@ -1,0 +1,12 @@
+
+{% if not tabAuthors or tabAuthors is empty %}
+    <p>Aucun auteur trouvé.</p>
+{% else %}
+    <ul>
+        {% for author in tabAuthors %}
+            <li>
+                <a href="{{ path('show_author', {name: author.id}) }}">Details</a> {{ author.id|upper }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
